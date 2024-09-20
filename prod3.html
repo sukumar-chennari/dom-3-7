@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product3</title>
+    <style>
+        img{
+            width:200px;
+            height:200px
+        }
+
+        #card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid black;
+            width: 25%;
+            text-align: center;
+        }
+
+        #div1>span{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+
+    </div>
+    <script>
+        var a=[{
+            "id": 3,
+            "title": "Mens Cotton Jacket",
+            "price": 55.99,
+            "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+            "category": "men's clothing",
+            "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+            "rating": {
+              "rate": 4.7,
+              "count": 500
+            }
+          }]
+
+          var div=document.getElementById('card')
+
+          var img=document.createElement('img')
+          img.src=a[0].image
+          div.appendChild(img)
+
+          var title=document.createElement('h4')
+          title.innerText=a[0].title
+          div.appendChild(title)
+
+          var des=document.createElement('p')
+          des.innerText=a[0].description
+          div.appendChild(des)
+
+          var div1=document.createElement('div')
+          div1.setAttribute('id','div1')
+          var span1=document.createElement('span')
+          var span2=document.createElement('span')
+          span1.innerText='Rate: '+ a[0].rating.rate
+          span2.innerText='Count: '+ a[0].rating.count
+          div1.appendChild(span1)
+          div1.appendChild(span2)
+          div.appendChild(div1)
+
+
+          var price=document.createElement('h4')
+          price.innerText='Price:    '+ a[0].price
+          div.appendChild(price)
+
+    </script>
+</body>
+</html>

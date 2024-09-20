@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product5</title>
+    <style>
+        img{
+            width:200px;
+            height:200px
+        }
+
+        #card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid black;
+            width: 25%;
+            text-align: center;
+        }
+
+        #div1>span{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+
+    </div>
+    <script>
+        var a=[{
+            "id": 5,
+            "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+            "price": 695,
+            "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+            "category": "jewelery",
+            "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+            "rating": {
+              "rate": 4.6,
+              "count": 400
+            }
+          }]
+
+          var div=document.getElementById('card')
+
+          var img=document.createElement('img')
+          img.src=a[0].image
+          div.appendChild(img)
+
+          var title=document.createElement('h4')
+          title.innerText=a[0].title
+          div.appendChild(title)
+
+          var des=document.createElement('p')
+          des.innerText=a[0].description
+          div.appendChild(des)
+
+          var div1=document.createElement('div')
+          div1.setAttribute('id','div1')
+          var span1=document.createElement('span')
+          var span2=document.createElement('span')
+          span1.innerText='Rate: '+ a[0].rating.rate
+          span2.innerText='Count: '+ a[0].rating.count
+          div1.appendChild(span1)
+          div1.appendChild(span2)
+          div.appendChild(div1)
+
+
+          var price=document.createElement('h4')
+          price.innerText='Price: '+ a[0].price
+          div.appendChild(price)
+
+    </script>
+</body>
+</html>

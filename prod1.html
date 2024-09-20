@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product1</title>
+    <style>
+        img{
+            width:200px;
+            height:200px
+        }
+
+        #card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid black;
+            width: 25%;
+            text-align: center;
+        }
+
+        #div1>span{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+
+    </div>
+    <script>
+        var a=[{
+            "id": 1,
+            "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+            "price": 109.95,
+            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            "category": "men's clothing",
+            "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+            "rating": {
+              "rate": 3.9,
+              "count": 120
+            }
+          }]
+
+          var div=document.getElementById('card')
+
+          var img=document.createElement('img')
+          img.src=a[0].image
+          div.appendChild(img)
+
+          var title=document.createElement('h4')
+          title.innerText=a[0].title
+          div.appendChild(title)
+
+          var des=document.createElement('p')
+          des.innerText=a[0].description
+          div.appendChild(des)
+
+          var div1=document.createElement('div')
+          div1.setAttribute('id','div1')
+          var span1=document.createElement('span')
+          var span2=document.createElement('span')
+          span1.innerText='Rate: '+ a[0].rating.rate
+          span2.innerText='Count: '+ a[0].rating.count
+          div1.appendChild(span1)
+          div1.appendChild(span2)
+          div.appendChild(div1)
+
+
+          var price=document.createElement('h4')
+          price.innerText='Price:    '+ a[0].price
+          div.appendChild(price)
+
+    </script>
+</body>
+</html>
